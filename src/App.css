@@ -1,0 +1,57 @@
+/* App.css */
+
+.App {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.App-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.App-header h1 {
+  color: #2c3e50;
+  font-size: 32px;
+  margin: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.filters {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.filters input,
+.filters select {
+  padding: 8px;
+  border: 1.5px solid #dfe6e9;
+  border-radius: 8px;
+}
+
+.todo-stats {
+  margin-top: 25px;
+  font-weight: 600;
+  color: #636e72;
+}
+
+.no-todos {
+  color: #b2bec3;
+  font-style: italic;
+  margin: 40px 0;
+}

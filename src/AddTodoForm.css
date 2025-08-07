@@ -1,0 +1,37 @@
+/* AddTodoForm.css */
+
+.add-todo-form {
+  margin-bottom: 25px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.todo-input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #dfe6e9;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.todo-input:focus {
+  border-color: #6c5ce7;
+}
+
+.add-btn {
+  padding: 10px 16px;
+  background-color: #6c5ce7;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #5a4dcf;
+}
