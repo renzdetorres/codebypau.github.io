@@ -7,17 +7,44 @@
   justify-content: center;
 }
 
-.todo-input {
-  flex-grow: 1;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #dfe6e9;
-  border-radius: 6px;
-  outline: none;
-  transition: border-color 0.3s;
+
+.input-wrapper {
+  position: relative;
 }
 
-.todo-input:focus {
+.input-wrapper input {
+  margin-right: 5px;
+  padding: 12px 14px;
+  border: 1px solid #dfe6e9;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-wrapper label {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  pointer-events: none;
+  transition: 0.2s ease all;
+}
+
+/* When focused or has text */
+.input-wrapper input:focus + label,
+.input-wrapper label.filled {
+  top: -8px;
+  left: 8px;
+  background: white; /* matches input background */
+  padding: 0 4px;
+  font-size: 12px;
+  color: #6c5ce7;
+}
+
+.input-wrapper input:focus {
   border-color: #6c5ce7;
 }
 
