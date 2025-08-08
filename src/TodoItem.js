@@ -7,6 +7,7 @@ function TodoItem(props) {
 
   // State to hold the edited value while typing
   const [editedText, setEditedText] = useState(props.todo.text);
+  const [editedDueDate, setEditedDueDate] = useState(props.todo.dueDate);
 
   // When "Edit" button is clicked
   const handleEdit = () => {
@@ -16,15 +17,26 @@ function TodoItem(props) {
   // Save the edited text
   const handleSave = () => {
     if (editedText.trim() === '') {
-      props.onEdit(props.todo.id, editedText.trim()); // Save to parent state
-      setIsEditing(false); // Exit editing mode
-    }
+       alert('Please fill in all the fields before adding a TODO');
+      return;
+    } 
+    props.onEdit(props.todo.id, editedText.trim()); // Save to parent state
+    setIsEditing(false); // Exit editing mode
   };
 
   // Cancel editing and revert text
   const handleCancel = () => {
     setEditedText(props.todo.text); // Revert to original text
+    setEditedDueDate(props.todo.dueDate);
     setIsEditing(false); // Exit editing mode
+  };
+
+  const getDueDateStatus = () => {
+    const today = new Date().toISOString().split('T')[0];
+    if (props.todo.dueDate && props.todo.dueDate < today && !props.todo.completed) {
+      return '(Overdue)';
+    }
+    return '';
   };
 
   return (
@@ -37,22 +49,30 @@ function TodoItem(props) {
       />
 
       {isEditing ? (
-        <>
+        <div>
           {/* Input field for editing */}
           <input
             type="text"
             value={editedText}
             onChange={(e) => setEditedText(e.target.value)}
           />
-          <button onClick={handleSave} className="save-btn">Save</button>
-          <button onClick={handleCancel} className="cancel-btn">Cancel</button>
-        </>
+          <input
+            type="date"
+            value={editedDueDate}
+            onChange={(e) => setEditedDueDate(e.target.value)}
+          />
+          <div className='button'> 
+            <button onClick={handleSave} className="save-btn">Save</button>
+            <button onClick={handleCancel} className="cancel-btn">Cancel</button>
+          </div>
+        </div>
       ) : (
         <>
           {/* Display text, styled if completed */}
           <span className={props.todo.completed ? 'completed' : ''}>
             {props.todo.text}
           </span>
+          <span className="meta"> | Due: {props.todo.dueDate} {getDueDateStatus()}</span>
           <button onClick={handleEdit} className="edit-btn">Edit</button>
         </>
       )}
