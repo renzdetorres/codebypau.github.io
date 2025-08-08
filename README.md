@@ -6,7 +6,7 @@ May local storage kaya hindi mawawala ang tasks kahit i-refresh mo ang page.
 
 ---
 
-## ✨ Features
+## Features
 
 - 📝 **Add TODOs** with:
   - Title
@@ -43,38 +43,11 @@ Sure! Narito na ang buo at final na README.md file, pinagsama-sama na lahat para
 
 ---
 
-# ✅ React TODO App
+# React TODO App
 
 Isang simple pero powerful na TODO list app na gawa sa **React**.  
 Pwedeng mag-add, edit, delete, mag-search at mag-filter ng tasks gamit ang **priority colors**, **categories**, at **due dates**.  
 May local storage kaya hindi mawawala ang tasks kahit i-refresh mo ang page.
-
----
-
-## 🖼️ Preview Screenshot
-
-![App Preview](./screenshots/todo-preview.png)
-
-> 💡 *Tip: Gumawa ng folder na `screenshots/` at maglagay ng preview image para gumana ito sa GitHub.*
-
----
-
-## ✨ Features
-
-- 📝 **Add TODOs** with:
-  - Title
-  - Priority (Low / Medium / High)
-  - Category (e.g. Personal, School, Work)
-  - Due Date
-
-- ✏️ **Edit and Delete**
-- 🔍 **Search** tasks
-- 📁 **Filter** by Priority, Category, or Due Date
-- 🎨 **Color-coded Priority**:
-  - 🟢 Low = Green
-  - 🟡 Medium = Orange
-  - 🔴 High = Red
-- 💾 **Data Persistence** (gamit ang `localStorage`)
 
 ---
 
@@ -88,7 +61,6 @@ my-todo-app/ ├── public/ │   └── index.html ├── src/ │   �
 
 ### 1. Clone the repository
 
-```bash
 git clone https://github.com/your-username/todo-app.git
 cd todo-app
 
