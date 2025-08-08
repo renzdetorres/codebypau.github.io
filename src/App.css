@@ -1,11 +1,6 @@
-/* App.css */
-
+/* ===== App.css ===== */
 .App {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background-color: #f8f9fa;
+  min-height: 100vh;
 }
 
 .App-header {
@@ -14,18 +9,19 @@
 }
 
 .App-header h1 {
-  color: #2c3e50;
+  color: #5b21b6;
   font-size: 32px;
   margin: 0;
+  font-weight: 700;
 }
 
 .container {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 25px 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px 20px;
+  background-color: #fafafa;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 
@@ -34,24 +30,30 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.filters input,
-.filters select {
-  padding: 8px;
-  border: 1.5px solid #dfe6e9;
+.filters input {
+  padding: 10px 12px;
+  border: 1.5px solid #d1d5db;
   border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.filters input:focus {
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.2);
 }
 
 .todo-stats {
   margin-top: 25px;
   font-weight: 600;
-  color: #636e72;
+  color: #6b7280;
 }
 
 .no-todos {
-  color: #b2bec3;
+  color: #a1a1aa;
   font-style: italic;
   margin: 40px 0;
 }
