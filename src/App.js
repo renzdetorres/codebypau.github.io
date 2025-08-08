@@ -19,35 +19,31 @@ function App() {
     if (savedTodos) {
       // If todos exist in localStorage, use them
       setTodos(JSON.parse(savedTodos));
-    } else {
-      // Default list if nothing is saved
-      setTodos([]);
-      setNextId(4); // Set nextId after default todos
     }
 
     if (savedNextId) {
       // Load saved nextId
-      setNextId(parseInt(savedNextId));
+      setNextId(parseInt(savedNextId, 10));
     }
   }, []); // Runs only once on mount
 
   // Save todos to localStorage every time they change
-  useEffect(() => {
-    if (todos.length > 0) {
-      localStorage.setItem('todos', JSON.stringify(todos));
-    }
-  }, [todos]);
-
   // Save nextId to localStorage when it changes
   useEffect(() => {
-    localStorage.setItem('nextId', nextId.toString());
-  }, [nextId]);
+    const handleBeforeUnload = () => {
+      localStorage.setItem('todos', JSON.stringify(todos));
+      localStorage.setItem('nextId', nextId.toString());
+    }
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [todos, nextId]);
 
   // Add a new todo item
-  const addTodo = (text) => {
+  const addTodo = ({text, dueDate}) => {
     const newTodo = {
       id: nextId, // Use the current nextId
       text: text,
+      dueDate: dueDate,
       completed: false
     };
     setTodos([...todos, newTodo]); // Append the new todo
@@ -69,9 +65,9 @@ function App() {
   };
 
   // Edit a todo's text
-  const editTodo = (id, newText) => {
+  const editTodo = (id, newText, newDueDate) => {
     setTodos(todos.map(todo =>
-      todo.id === id ? { ...todo, text: newText } : todo
+      todo.id === id ? { ...todo, text: newText, dueDate: newDueDate} : todo
     ));
     alert('Succesfully updated!')
   };
@@ -85,7 +81,7 @@ function App() {
       );
     }
 
-    return filtered.sort((a,b) => {
+    return filtered.sort(() => {
       const priorities = { };
       return priorities;
     });
