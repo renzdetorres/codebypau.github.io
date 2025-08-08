@@ -1,12 +1,35 @@
-/* AddTodoForm.css */
-
+/* ===== AddTodoForm.css ===== */
 .add-todo-form {
   margin-bottom: 25px;
   display: flex;
-  gap: 10px;
+  gap: 5px;
   justify-content: center;
+  flex-wrap: wrap;
+  background-color: #f5f3ff;
+  padding: 5px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
+.add-todo-form input[type="text"],
+.add-todo-form input[type="date"],
+.add-todo-form select {
+  flex: 1;
+  padding: 12px 14px;
+  margin: 5px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-todo-form input:focus,
+.add-todo-form select:focus {
+  outline: none;
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.2);
+}
 
 .input-wrapper {
   position: relative;
@@ -25,40 +48,40 @@
 
 .input-wrapper label {
   position: absolute;
-  left: 10px;
-  top: 50%;
+  left: 15px;
+  top: 48%;
   transform: translateY(-50%);
   color: #aaa;
   pointer-events: none;
   transition: 0.2s ease all;
 }
 
-/* When focused or has text */
 .input-wrapper input:focus + label,
 .input-wrapper label.filled {
   top: -8px;
   left: 8px;
-  background: white; /* matches input background */
+  background: white;
   padding: 0 4px;
   font-size: 12px;
-  color: #6c5ce7;
+  color: #a78bfa;
 }
 
 .input-wrapper input:focus {
-  border-color: #6c5ce7;
+  border-color: #a78bfa;
 }
 
 .add-btn {
-  padding: 10px 16px;
-  background-color: #6c5ce7;
+  padding: 10px 30px;
+  background-color: #a78bfa;
   color: white;
   font-weight: bold;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .add-btn:hover {
-  background-color: #5a4dcf;
+  background-color: #8b5cf6;
+  transform: translateY(-2px);
 }
